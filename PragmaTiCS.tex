@@ -13,7 +13,7 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{0}
 
-\title{Language interpretation as probabilistic inference}
+\title{Pragmatic language interpretation as probabilistic inference}
 
 \author[stan]{Noah D. Goodman\corref{cor1}}
 % \ead{ngoodman@stanford.edu}
@@ -26,9 +26,9 @@
 \begin{document}
 
 \begin{abstract}
-Understanding language is more than use of fixed conventions and more than decoding combinatorial structure: it is an exquisite \emph{inference} of what is likely true given our knowledge of the speaker, the language, and the context.
-%How do we explain the way human language interpretations trades off between complex compositional structure and exquisite sensitivity to the details of context? 
-Building on developments in game theory and probabilistic modeling, we describe the rational speech act (RSA) model of pragmatic reasoning. RSA and its extensions provide a principled way to formalize inferences about meaning in context. RSA models have been used to make quantitative predictions about human behavior in a wide variety of different tasks and situations, and they explain how complex phenomena like hyperbole and vagueness can arise. More generally, they provide a computational framework for integrating linguistic structure, world knowledge, and context in language understanding.
+Understanding language is more than use of fixed conventions and more than decoding combinatorial structure. Instead, comprehenders make exquisitely sensitive inferences about what utterances mean given their knowledge of the speaker, the language, and the context.
+%How do we explain the way human language interpretations trades off between complex compositional structure and exquisite sensitivity to the details of context?
+Building on developments in game theory and probabilistic modeling, we describe the rational speech act (RSA) model of pragmatic reasoning. RSA and its extensions provide a principled way to formalize inferences about meaning in context. RSA models have been used to make successful quantitative predictions about human behavior in a wide variety of different tasks and situations, and they explain how complex phenomena like hyperbole and vagueness can arise. More generally, they provide a computational framework for integrating linguistic structure, world knowledge, and context in pragmatic language understanding.
 \end{abstract}
 
 \maketitle
@@ -68,8 +68,8 @@ For example, the core of Grice's proposal was a set of
 \emph{conversational maxims} (\textbf{see Glossary}; be truthful,
 relevant, informative, and perspicuous) that could lead to
 \emph{implicatures} -- inferences about speakers' intended meaning
---~when violated. Attempts to formalize the Gricean notion of
-implicature have faltered \cite[e.g.,][]{hirschberg1985}, and many
+--~when violated. Formalization of the Gricean notion of
+implicature using the maxims is difficult \cite[e.g.,][]{hirschberg1985}, however, and many
 post-Gricean theories have instead proposed alternative sets of
 principles \citep{sperber1986,levinson2000}. An important test
 of the difficulty of this theoretical project is that the burgeoning
@@ -126,7 +126,7 @@ inferring what such a helpful speaker must have meant, given what he
 said. The first of these basic assumptions is formalized by viewing the speaker
 as a utility-maximizing agent (where the effort of language production
 is costly, but communicating information beneficial). The listener then
-updates his beliefs via Bayesian inference.\footnote{For clarity throughout, we use for the speaker (Alice) a female pronoun and for the listener (Bob) a male pronoun.}
+updates his beliefs via Bayesian inference.\footnote{For clarity throughout, we use a female pronoun for Alice, the speaker, and a male pronoun for Bob, the listener.}
 
 The pragmatic listener infers the state of the world, \emph{w,} using
 Bayes' rule, given the observation that the speaker chose a particular
@@ -189,19 +189,17 @@ being {\sc hg}, while $P_{\text{Lit}}(w\mid \text{``glasses''})$ places equal pr
 In the simplest RSA model, as illustrated above, the speaker values
 providing epistemic help -- information -- to the listener. But the model can also be extended to create a more sophisticated speaker who is uncertain
 about the world state, who avoids costly utterances, or who aims to
-provide relevant information (\textbf{see Box on Refinements to the speaker's utility}). Connections to
+provide relevant information. Connections to
 other theoretical approaches and aspects of language then become
 straightforward. For instance, by modifying the speaker's utility function, we can model the notion of \emph{topic-relevant} information, which
 connects to linguistic ideas about the ``question under discussion''
-\citep{roberts1996}. 
+\citep{roberts1996}.
 As a second example, RSA can be combined with the noisy
 channel approach to language comprehension \citep{levy2008},
-in order to explain the communicative use of sentence fragments and prosodic stress \citep{bergen2016}. 
+in order to explain the communicative use of sentence fragments and prosodic stress \citep{bergen2016}.
 
-In sum, RSA models
-replace Grice's variety of maxims with a single, utility-theoretic
-version of the cooperative principle, in which utilities can reflect a
-complex, real-world agent.
+In sum, RSA models replace Grice's maxims with a single, utility-theoretic
+version of the cooperative principle, in which utilities can reflect the communicative and social priorities of a complex, real-world agent.
 
 \section{Empirical support for RSA}\label{empirical-support-for-rsa}
 
@@ -219,17 +217,17 @@ with empirical measurements of the prior distribution.
 
 Although in this initial work RSA was used to simulate the behavior of
 both speakers and listeners, most subsequent work has focused on the
-behavior of listeners alone, assuming that RSA captures listeners'
+behavior of listeners alone. This work follows the idea that RSA captures listeners'
 (perhaps optimistic) assumptions about the rational behavior of
-speakers. (Thus, RSA is `rational' in the sense of \emph{assuming} that
+speakers. Thus, RSA is `rational' in the sense of \emph{assuming} that
 speakers are rational; a separate question is how rational speakers
-actually \emph{are}; \textbf{see Box on Producing referring expressions}). 
+actually \emph{are} (\textbf{see Box on Producing referring expressions}).
 In addition, though most research using RSA models has focused on mature language comprehenders, these models have also been the inspiration for a variety of developmental work (\textbf{see Box on Children's developing pragmatic competence}).
 
-Focusing on adult listeners, a variety of other work has replicated and extended the initial findings
+A variety of other work has replicated and extended the initial findings
 using similar signaling-game paradigms. In a tight replication of the
 initial results, \citet{qing2015} reproduced the basic findings and
-explored a set of variants to the initial RSA utility function. 
+explored a set of variants to the initial RSA utility function.
 And \citet{carstensen2014} also found that RSA
 predicted judgments in a communication game using much more complex
 spatial language stimuli, albeit with somewhat noisier fits. Thus, RSA
@@ -244,13 +242,12 @@ depths of reasoning are in principle possible. The evidence is mixed on whether 
 recursion to find unique interpretations \citep{stiller2011,degen2012,vogel2013}. More recently,
 however, \citet{franke2016} showed some evidence of deeper recursion
 for a subpopulation of participants (approx.~15\%) in a more
-complex paradigm, consistent with work on competitive
-games \citep{camerer2004}. This heterogeneity -- and its dependence
+complex paradigm, consistent with work on competitive economic
+games where deeper recursions are sometimes found \citep{camerer2004}. This heterogeneity -- and its dependence
 on individual and contextual differences -- is an interesting topic for
 future work.
 
-A number of other studies have tested RSA with utilities extended as
-described in \textbf{Box on Refining Utilities}. For instance, a speaker might be expected to
+A number of other studies have tested RSA with more elaborated utility functions (\textbf{see Box on Refinements to the speaker’s utility}). For instance, a speaker might be expected to
 produce a less informative utterance when the more informative one is
 much harder to say. This tendency can be formalized by including a cost
 term in the speaker's utility; with this modification, RSA
@@ -278,7 +275,7 @@ speaker uncertainty. These empirical findings are congruent with other recent
 demonstrations of the importance of epistemic reasoning in pragmatic
 implicature \citep[e.g.,]{bergen2012,breheny2013}. They
 also highlight the way the RSA framework provides a (non-modular) theory
-for interactions between language and non-linguistic cognition. 
+for interactions between language and non-linguistic cognition.
 We next turn to a variety of other extensions to the basic RSA model that explore additional interactions.
 
 \section{Uncertainty about the speaker: Joint reasoning}\label{uncertainty-about-the-speaker-joint-reasoning}
@@ -412,7 +409,7 @@ processing \citep{degen2015}.
 Future extensions of RSA will likely include more complex
 worlds; pragmatic alternatives with compositional structure; more
 sophisticated, multi-part discourses; and utility structures that better
-take into account the complexities of social interaction. 
+take into account the complexities of social interaction.
 On the practical side, computing the predictions of RSA models can
 become prohibitive when the number of world states or utterances grows
 large. Further development of algorithms to implement RSA are needed.
@@ -434,7 +431,7 @@ an astonishingly flexible communication system.
 
 \section{Acknowledgements}
 
-We gratefully acknowledge funding from a James S. McDonnell Foundation Scholar Award to Goodman, 
+We gratefully acknowledge funding from a James S. McDonnell Foundation Scholar Award to Goodman,
  ONR Grants N00014-13-1-0788 and \#N00014-13-1-0287 to Goodman and Frank, and NSF BCS Grant \#1456077 to Frank.
 
 \bibliographystyle{model5-names}
@@ -512,7 +509,7 @@ considered in recent work:
   correctly predicts interactions between a speaker's knowledge and a
   listener's interpretations \citep{goodman2013}.
 
-\item Topic relevance: While it may be highly informative to provide detailed descriptions, such detail is not always \emph{relevant}. Relevance can be captured by introducing a topic of conversation \citep[sometimes known as a \emph{Question Under Discussion,}][]{roberts1996} and adjusting the epistemic utility to reflect only information about this topic: $U(u;w,t)=\log \sum_{w' \text{ s.t. } t(w')=t(w)} P_{\text{Lit}}(w'\mid u)$, where the function $t$ projects from complete worlds to the relevant aspects \citep{kao2014}. 
+\item Topic relevance: While it may be highly informative to provide detailed descriptions, such detail is not always \emph{relevant}. Relevance can be captured by introducing a topic of conversation \citep[sometimes known as a \emph{Question Under Discussion,}][]{roberts1996} and adjusting the epistemic utility to reflect only information about this topic: $U(u;w,t)=\log \sum_{w' \text{ s.t. } t(w')=t(w)} P_{\text{Lit}}(w'\mid u)$, where the function $t$ projects from complete worlds to the relevant aspects \citep{kao2014}.
 %Because the topic may reflect previous interactions, this extension leads to a variety of discourse effects.
 
 \item Other social goals: Language is often used not just to inform, but
@@ -557,7 +554,7 @@ pragmatic development.
 
 \section{Box: Producing referring expressions}\label{box-producing-referring-expressions}
 
-RSA stands for the ``rational speech act'' model, indicating that listeners idealize speakers as rational. 
+RSA stands for the ``rational speech act'' model, indicating that listeners idealize speakers as rational.
 Are speakers in fact rational in a meaningful way? And if so, how can this conclusion be
 integrated with the large body of evidence indicating that speakers are
 egocentric, error prone, and subject to idiosyncratic production
@@ -626,7 +623,7 @@ these pressures should be visible in the lexicons of human languages. A
 recent body of evidence suggests that they are. Regier and colleagues
 have argued that the typological distribution of languages in particular
 semantic domains reflects the range of optimal communication systems
-\citep[e.g.,][]{regier,2008,kemp2012,xu2014}. 
+\citep[e.g.,][]{regier,2008,kemp2012,xu2014}.
 An important future direction is to understand whether this typological distribution is predicted to arise from iterated learning with a population of RSA language users.
 
 %For example, although an infinity of possible ways of
