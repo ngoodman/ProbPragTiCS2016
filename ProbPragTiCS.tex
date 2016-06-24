@@ -26,7 +26,9 @@
 \begin{document}
 
 \begin{abstract}
-How do we explain the way human language interpretations trades off between complex compositional structure and exquisite sensitivity to the details of context? Building on developments in game theory and probabilistic modeling, we describe the rational speech act (RSA) model of pragmatic reasoning. RSA and its extensions provide a principled way to formalize the process of pragmatic reasoning about meaning in context. RSA models have been used to make quantitative predictions about human behavior in a wide variety of different tasks and situations, and they show how complex phenomena like hyperbole and vagueness can arise. More generally, they provide a computational framework for integrating structure and context-sensitivity in language understanding.
+Understanding language is more than use of fixed conventions and more than decoding combinatorial structure: it is an exquisite \emph{inference} of what is likely true given our knowledge of the speaker, the language, and the context.
+%How do we explain the way human language interpretations trades off between complex compositional structure and exquisite sensitivity to the details of context? 
+Building on developments in game theory and probabilistic modeling, we describe the rational speech act (RSA) model of pragmatic reasoning. RSA and its extensions provide a principled way to formalize inferences about meaning in context. RSA models have been used to make quantitative predictions about human behavior in a wide variety of different tasks and situations, and they explain how complex phenomena like hyperbole and vagueness can arise. More generally, they provide a computational framework for integrating linguistic structure, world knowledge, and context in language understanding.
 \end{abstract}
 
 \maketitle
@@ -145,10 +147,9 @@ captures the extent to which the speaker maximizes her utility --
 \emph{how} rational will she be. The basic speaker utility used in RSA
 captures the social benefit of providing epistemic help to a listener:
 
-$$U(u;w) = -\log P_{\text{Lit}}(w \mid u)$$
+$$U(u;w) = \log P_{\text{Lit}}(w \mid u)$$
 
-This expression measures how much information is provided to the
-listener; in order to avoid an infinite recursion, the speaker is
+This expression measures how certain the listener becomes about the intended world, after hearing the utterance; in order to avoid an infinite recursion, the speaker is
 assumed to consider a simpler listener, the \emph{literal listener}
 $P_{\text{Lit}}$. The literal listener again updates his beliefs in
 accord with Bayesian inference, under the assumption that the literal
@@ -452,9 +453,8 @@ We gratefully acknowledge funding from a James S. McDonnell Foundation Scholar A
 \item Rational speech act (RSA) models provide a quantitative framework to
   capture intuitions about pragmatic reasoning in language
   understanding.
-\item Extensions to RSA that allow for joint reasoning about word meaning
-  and speakers' goals can capture many otherwise puzzling phenomena
-  including embedded implicatures, vagueness, hyperbole, irony, and
+\item Extensions to RSA that allow for reasoning about the speaker -- for instance, her goals and word usage -- can capture many otherwise puzzling phenomena
+  including vagueness, embedded implicatures, hyperbole, irony, and
   metaphor.
 \item The RSA framework can inform psycholinguistic processing experiments,
   linguistic theory, and scalable natural language processing models.
@@ -464,7 +464,7 @@ We gratefully acknowledge funding from a James S. McDonnell Foundation Scholar A
 
 \begin{itemize}
 \item \emph{Model details.} How deeply do human comprehenders recurse when
-  reasoning about others intentions? Is depth of reasoning constant, or
+  reasoning about others' intentions? Is depth of reasoning constant, or
   does it vary across situations? How are alternative utterances
   computed?
   %  Do they depend \emph{a priori} on the heard utterance ofcontext?
@@ -475,7 +475,7 @@ We gratefully acknowledge funding from a James S. McDonnell Foundation Scholar A
 %
 \item \emph{Linguistic goals}. How do ``Gricean'' utilities -- the drive to be informative yet succinct -- relate to other social goals like conveying affect, or establishing relationships? How do cooperative and competitive goals mix in language use?
 
-\item \emph{Dialogue}. How can RSA be used to model how conversational partners' utilities, possible goals, and the context more broadly all evolve over the course of a conversation?
+\item \emph{Dialogue}. How can RSA be used to model the evolution over the course of a conversation of a partners' utilities, possible goals, and the context more broadly?
 
 % \item \emph{Language change}. How and when does synchronic language use in pragmatic contexts lead to diachronic language change?
 
@@ -490,8 +490,7 @@ recursive pragmatic computations, how is language processed so quickly? How can 
 
 \section{Box: Refinements to the speaker's utility}\label{box-refinements-to-the-speakers-utility}
 
-The notion of the speaker's utility -- what is rewarding for a speaker -- is central to the RSA approach. The basic RSA model captures the speaker's need to be \emph{informative} to a listener: $U(u; w) = \log
-P_{\text{Lit}}(w\mid u)$. But different utilities lead to different kinds of
+The notion of the speaker's utility -- what is rewarding for a speaker -- is central to the RSA approach. The basic RSA model captures the speaker's need to be \emph{informative} to a listener: $U(u; w) = \log P_{\text{Lit}}(w\mid u)$. Different utilities lead to different kinds of
 speakers, which in turn lead to different interpretations by the pragmatic
 listener. Several utility refinements (and their combinations) have been
 considered in recent work:
@@ -506,12 +505,13 @@ considered in recent work:
 
 \item Speaker uncertainty: When the speaker does not have full knowledge of
   the world she should choose an utterance according to \emph{expected
-  utility}: $U(u;k) = E_{P(w\mid k)}{[}U(u;w){]}$, where $k$
+  utility}: $U(u;k) = {\mathbb E}_{P(w\mid k)}{[}U(u;w){]}$, where $k$
   summarizes the speaker's knowledge or observations. This extension
   correctly predicts interactions between a speaker's knowledge and a
-  listener's interpretations \cite{goodman2013}.
+  listener's interpretations \citep{goodman2013}.
 
-\item Topic relevance: While it may be highly informative to provide detailed descriptions, such detail is not always \emph{relevant}. Relevance can be captured by introducing a topic of conversation \citep[sometimes known as a \emph{Question Under Discussion}][]{roberts1996} and adjusting the epistemic utility to reflect only information about this topic: $U(u;w,t)=\log \sum_{w' st t(w')=t(w)} P_{\text{Lit}}(w'\mid u)$. Because the topic may reflect previous interactions, this extension leads to a variety of discourse effects.
+\item Topic relevance: While it may be highly informative to provide detailed descriptions, such detail is not always \emph{relevant}. Relevance can be captured by introducing a topic of conversation \citep[sometimes known as a \emph{Question Under Discussion,}][]{roberts1996} and adjusting the epistemic utility to reflect only information about this topic: $U(u;w,t)=\log \sum_{w' \text{ s.t. } t(w')=t(w)} P_{\text{Lit}}(w'\mid u)$, where the function $t$ projects from complete worlds to the relevant aspects \citep{kao2014}. 
+%Because the topic may reflect previous interactions, this extension leads to a variety of discourse effects.
 
 \item Other social goals: Language is often used not just to inform, but
   also to flirt, insult, comfort, and to pursue myriad other social
