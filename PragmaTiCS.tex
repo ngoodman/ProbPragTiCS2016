@@ -163,7 +163,7 @@ $$P_{\text{Lit}}(w\mid u) \propto \delta_{\denote{u}(w)}P(w)$$
 This definition of the literal listener requires a semantic denotation
 for each sentence, $\denote{u}$, in which a sentence
 has the value true or false when applied to a particular state of
-affairs (i.e. a truth-function on possible worlds). 
+affairs, $w$ (the ``world''). 
 This denotation is how conventional meaning enters the pragmatic reasoning process, 
 and, as we describe briefly below, it connects RSA to work in lexical and
 compositional semantics \citep{heim1998,dowty2012}.
@@ -222,7 +222,7 @@ interpret, and about baseline expectations for reference (corresponding
 to the prior $P(w)$). The RSA model showed a tight, parameter-free fit
 to listeners' aggregate judgements when combined
 with empirical measurements of the prior distribution: 
-$P_S$ and $P_L$ correlated very strongly with participants' average bets on what to say and how to interpret, respectively. 
+$P_S$ and $P_L$ models correlated very strongly with participants' average bets on what to say and how to interpret, respectively. 
 
 Although in this initial work RSA was used to simulate the behavior of
 both speakers and listeners, most subsequent work has focused on the
@@ -243,7 +243,7 @@ spatial language stimuli, albeit with somewhat noisier fits. Thus, RSA
 with an epistemic utility can predict judgments in simple signaling
 games across variations in both sample and stimulus.
 
-One question raised by this initial work was the level of recursion that
+One question raised by this initial work was the level of social recursion (see Glossary) that
 best fit human performance. The presentation of RSA given above is
 stated in terms of a minimal recursion (a listener reasons about
 speaker, who in turn reasons about a literal listener) but much greater
@@ -267,7 +267,7 @@ message choices: the effect of alternative possible messages on a listener's inf
 difficulty by manipulating how quickly the speaker could type on an
 on-screen keyboard; participants' interpretations reflected this difficulty
 as predicted. Additional work has used proxies for production cost
-such as number of words and their frequencies in explorations of phenomena such as negation and nominal reference \citep{nordmeyer2014,graf2016}.
+such as number of words and their frequencies in explorations of phenomena such as negation \citep{nordmeyer2014} and the choice of noun used to refer to an object \citep{graf2016}.
 
 Finally, in addition to ad-hoc signaling systems, RSA provides a way to describe reasoning about classic linguistic
 implicatures. Perhaps the
@@ -278,7 +278,7 @@ interpretations of quantifiers and number words in exactly this
 situation and found that these judgments were well-predicted by RSA. In
 addition, a critical feature of this study was the inclusion of an
 epistemic manipulation (e.g., that some of the letters had not been opened
-yet). By using expected informativity to account for the speaker's
+yet). By using expected informativity (\textbf{see Box}) to account for the speaker's
 limited perceptual access, the model was able to predict
 differing patterns of listener judgments based on different levels of
 speaker uncertainty. These empirical findings are congruent with other recent
@@ -378,8 +378,7 @@ some \emph{but not all} of its circles, an interpretation that standard
 Gricean theories cannot generate \citep{chemla2011}. 
 Recent work \citep{potts2015} has replicated these interpretations in a series of large-scale
 experiments and confirmed that basic RSA models could not capture them.
-An implementation of uRSA that operates over fully-compositional
-semantic systems to jointly infer word meanings and world state \citep{bergen2016,potts2015} showed a good fit to the overall pattern of data, however, supporting the idea that uRSA is a fruitful way to incorporate pragmatic reasoning into compositional systems.
+An implementation of uRSA that jointly infers word meanings and world state \citep{bergen2016,potts2015} showed a good fit to the overall pattern of data. Sentence meanings in this model are built by composing uncertain word meanings, showing how uRSA is a fruitful way to incorporate pragmatic reasoning into compositional semantic systems.
 
 \section{Concluding remarks and future directions}\label{conclusions-and-future-directions}
 
@@ -504,10 +503,9 @@ We gratefully acknowledge funding from a James S. McDonnell Foundation Scholar A
 \section{Box: Outstanding questions}\label{box-outstanding-questions}
 
 \begin{itemize}
-\item \emph{Model details.} How deeply do human comprehenders recurse when
-  reasoning about others' intentions? Is depth of reasoning constant, or
-  does it vary across situations? How are alternative utterances
-  computed?
+\item \emph{Social recursion.} How deeply do human comprehenders reason about others' intentions? Is depth of recursion -- ``I think that you think that...'' -- constant, or does it vary across situations? 
+  
+\item \emph{Alternatives.} How are alternative utterances computed? Do they depend on the language grammar? On situational factors?
   %  Do they depend \emph{a priori} on the heard utterance ofcontext?
 
 % \item \emph{Learning}. How can pragmatic reasoning occur in situations where
@@ -687,6 +685,12 @@ An important future direction is to understand whether this typological distribu
 
 \item \textbf{Uncertain RSA models (uRSA)}. A specific extension of RSA models that allow for joint inferences about both the speaker's intended meaning and other aspects of the interaction, such as the topic, the context, or even the meanings of particular words.
 
+Some more that Becca sugested:
+approximately rational
+literal listener 
+social recursion
+expected informativity
+compositional semantic systems
 
 
 
