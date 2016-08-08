@@ -26,7 +26,7 @@
 \begin{document}
 
 \begin{abstract}
-Understanding language is more than use of fixed conventions and more than decoding combinatorial structure. Instead, comprehenders make exquisitely sensitive inferences about what utterances mean given their knowledge of the speaker, the language, and the context.
+Understanding language is more than the use of fixed conventions and more than decoding combinatorial structure. Instead, comprehenders make exquisitely sensitive inferences about what utterances mean given their knowledge of the speaker, the language, and the context.
 Building on developments in game theory and probabilistic modeling, we describe the rational speech act (RSA) framework for pragmatic reasoning. RSA models provide a principled way to formalize inferences about meaning in context; they have been used to make successful quantitative predictions about human behavior in a wide variety of different tasks and situations, and they explain why complex phenomena like hyperbole and vagueness occur. More generally, they provide a computational framework for integrating linguistic structure, world knowledge, and context in pragmatic language understanding.
 \end{abstract}
 
@@ -64,16 +64,15 @@ principles that allow the derivation of pragmatic inferences have met
 with difficulty.
 
 For example, the core of Grice's proposal was a set of
-\textbf{conversational maxims} (see Glossary). The maxims (be truthful,
+\textbf{conversational maxims} (see Glossary). Inferences about speakers' behavior relative to these maxims (be truthful,
 relevant, informative, and perspicuous) could lead to
-\textbf{implicatures} -- inferences about speakers' intended meaning
---~when violated. Formalization of the Gricean notion of
-implicature using the maxims is difficult \cite[e.g.,][]{hirschberg1985}, however, and many
+\textbf{implicatures} -- inferences about their intended meaning. Formalization of the Gricean notion of
+implicature using the maxims is difficult, however, and many
 post-Gricean theories have instead proposed alternative sets of
 principles \citep{sperber1986,levinson2000}. An important test
 of the difficulty of this theoretical project is that the burgeoning
 experimental psycholinguistic literature attempting to measure pragmatic
-inference has found these principles only modestly useful \citep{breheny2006,huang2009,noveck2008}. 
+inference has found these principles only modestly useful \citep{breheny2006,huang2009,noveck2008}.
 In addition, this sort of informal theory of pragmatics can make only directional,
 qualitative predictions with respect to experimental data that are typically graded and
 quantitative.
@@ -84,7 +83,7 @@ of rational action; thus, technical tools for reasoning about rational
 action should elucidate linguistic phenomena. Such a goal-directed view
 of language production has led to the development of engineering systems
 for natural language generation \citep{dale1995} that have in turn
-been applied as theories of human language production \citep[e.g.,][]{viethen2006}. 
+been applied as theories of human language production \citep[e.g.,][]{viethen2006}.
 Concurrently, the tools of game-theory -- which allow for
 the characterization of rational actions with respect to defined
 utilities -- have provided a vocabulary for formal descriptions of
@@ -95,7 +94,7 @@ tradition.
 
 Probabilistic, or Bayesian, models have been at the core of a set of
 recent attempts to understanding the interplay between structured
-representations and graded or statistical information \citep{Tenenbaum2011}. 
+representations and graded or statistical information \citep{Tenenbaum2011}.
 These models have been an important tool for understanding
 non-linguistic varieties of rational action, integrating belief
 understanding with action planning \citep{baker2009}. A
@@ -106,14 +105,13 @@ including uncertainty about speakers' goals and beliefs, uncertainty
 about the discourse and broader context, and even uncertainty about the
 meanings of words.
 
-In the remainder of this paper we review the field of probabilistic
-pragmatics. We begin by describing the \textbf{rational speech act
+In the remainder of this paper we describe the probabilistic approach to  pragmatics. We begin by presenting the \textbf{rational speech act
 (RSA) model}, and the growing body of empirical data supporting its
-utility in explaining pragmatic reasoning. We next describe extensions
+utility in explaining pragmatic reasoning. We next discuss extensions
 to RSA that allow it to be applied to non-literal uses of language like
 hyperbole, irony and metaphor, to cases of vagueness and ambiguity, and
 to complex interactions between pragmatics and compositional
-syntax/semantics. We close with a discussion of broader applications of
+syntax/semantics. We close by considering the broader applications of
 -- and challenges for -- probabilistic pragmatics models.
 
 \section{A ``rational speech act'' model}\label{a-rational-speech-act-model}
@@ -124,7 +122,7 @@ the idea (due to Grice, David Lewis, and others) that speakers are assumed to
 produce utterances to be helpful yet parsimonious, relative to some
 particular topic or goal. Listeners then understand utterances by
 inferring what such a helpful speaker must have meant, given what she
-said\footnote{For clarity throughout, we use a female pronoun for Alice, the speaker, and a male pronoun for Bob, the listener.}. 
+said.\footnote{For clarity throughout, we use a female pronoun for Alice, the speaker, and a male pronoun for Bob, the listener.}
 The first of these basic assumptions is formalized by viewing the speaker
 as a utility-maximizing agent (where the effort of language production
 is costly, but communicating information is beneficial). The listener then
@@ -151,7 +149,7 @@ captures the social benefit of providing epistemic help to a listener:
 
 $$U(u;w) = \log P_{\text{Lit}}(w \mid u)$$
 
-This expression measures how certain the listener becomes about the intended world, after hearing the utterance; 
+This expression measures how certain the listener becomes about the intended world, after hearing the utterance;
 in order to avoid an infinite recursion and provide an entry point for conventional (semantic) meaning, the speaker is
 assumed to consider a simpler listener, the \emph{literal listener}
 $P_{\text{Lit}}$. The literal listener again updates his beliefs in
@@ -163,8 +161,8 @@ $$P_{\text{Lit}}(w\mid u) \propto \delta_{\denote{u}(w)}P(w)$$
 This definition of the literal listener requires a semantic denotation
 for each sentence, $\denote{u}$, in which a sentence
 has the value true or false when applied to a particular state of
-affairs, $w$ (the ``world''). 
-This denotation is how conventional meaning enters the pragmatic reasoning process, 
+affairs, $w$ (the ``world'').
+This denotation is how conventional meaning enters the pragmatic reasoning process,
 and, as we describe briefly below, it connects RSA to work in lexical and
 compositional semantics \citep{heim1998,dowty2012}.
 
@@ -174,7 +172,7 @@ compositional semantics \citep{heim1998,dowty2012}.
 \begin{center}
 \includegraphics[width=1.0\textwidth]{image02.png}
 \caption{\label{fig:hg} Application of RSA-style reasoning to a signaling
-game (shown by the three faces along the bottom). Agents are depicted as reasoning recursively about one another's beliefs: listener L reasons about an internal representation of a speaker S, who in turn is modeled as reasoning about a simplified literal listener, Lit. 
+game (shown by the three faces along the bottom). Agents are depicted as reasoning recursively about one another's beliefs: listener L reasons about an internal representation of a speaker S, who in turn is modeled as reasoning about a simplified literal listener, Lit.
 Boxes around targets in the reference game denote interpretations available to a particular agent.}
 \end{center}
 \end{figure}
@@ -183,8 +181,8 @@ Consider the scenario in Figure \ref{fig:hg}, in which speaker and listener shar
 world of three faces -- one with hat and glasses ({\sc hg}), one with glasses
 only ({\sc g}), and one with neither ({\sc n}); one of these (known to the speaker
 but not the listener) is the ``friend.'' The speaker says ``my friend
-has glasses,'' presupposing that there is a single friend. 
-Experimental participants, who know that the only alternative utterance was ``my friend has a hat,'' tend to share the intuition that this sentence refers to {\sc g} and not {\sc hg} or {\sc n} \citep{stiller2011,stiller2015}. While real-world language has many more utterances available (``my friend has glasses, but no hat, and an invisible nose''), this restricted scenario serves to illustrate and explore the underlying dynamics of pragmatic reasoning.
+has glasses,'' presupposing that there is a single friend.
+Experimental participants, who know that the only alternative utterance was ``my friend has a hat,'' tend to share the intuition that this sentence refers to {\sc g} and not {\sc hg} or {\sc n} \citep{stiller2011,stiller2015}. While real-world language has many more utterances available (e.g., ``my friend has glasses, but no hat''), this restricted scenario serves to illustrate the underlying dynamics of pragmatic reasoning.
 
 Under RSA, listener L reasons about S (a simplified
 internal representation of the speaker), who in turn reasons about Lit
@@ -192,7 +190,7 @@ internal representation of the speaker), who in turn reasons about Lit
 beliefs based on a straightforward denotation: ``glasses'' applies to
 both {\sc g} and {\sc hg}, while ``hat'' applies only to {\sc hg}. Thus
 $P_{\text{Lit}}(w\mid \text{``hat''})$ places all probability on the friend
-being {\sc hg}, while $P_{\text{Lit}}(w\mid \text{``glasses''})$ places equal probability on {\sc g} and {\sc hg} (see innermost thought bubbles in Figure \ref{fig:hg}). The speaker S who intends to communicate that {\sc hg} is the friend will thus tend to choose the more informative ``hat''; but if she intends to communicate that {\sc g} is the friend, she will use ``glasses.'' Finally, upon hearing ``glasses'' the listener L infers that this likely refers to {\sc g} (reflecting the counterfactual that if S had been talking about {\sc hg}, she would have said ``hat'' instead).
+being {\sc hg}, while $P_{\text{Lit}}(w\mid \text{``glasses''})$ places equal probability on {\sc g} and {\sc hg} (see innermost thought bubbles in Figure \ref{fig:hg}). The speaker S who intends to communicate that {\sc hg} is the friend will thus tend to choose the more informative ``hat''; but if she intends to communicate that {\sc g} is the friend, she will use ``glasses.'' Finally, upon hearing ``glasses,'' the listener L infers that this likely refers to {\sc g} (reflecting the counterfactual that if S had been talking about {\sc hg}, she would have said ``hat'' instead).
 
 In the simplest RSA model, as illustrated above, the speaker values
 providing epistemic help -- information -- to the listener. But the model can also be extended to create a more sophisticated speaker who is uncertain
@@ -206,7 +204,7 @@ As a second example, RSA can be combined with the noisy
 channel approach to language comprehension \citep{levy2008},
 in order to explain the communicative use of sentence fragments and prosodic stress \citep{bergen2015}.
 
-In sum, RSA models replace Grice's maxims with a single, utility-theoretic version of the cooperative principle \citep{franke2016b}. 
+In sum, RSA models replace Grice's maxims with a single, utility-theoretic version of the cooperative principle \citep{franke2016b}.
 This formulation is based on utilities that can reflect the communicative and social priorities of a complex, real-world agent.
 
 \section{Empirical support for RSA}\label{empirical-support-for-rsa}
@@ -219,10 +217,10 @@ configurations. Using a betting paradigm (participants were asked to
 distribute \$100 between response options), these experiments collected
 separate judgments about what a speaker would say, a listener would
 interpret, and about baseline expectations for reference (corresponding
-to the prior $P(w)$). The RSA model showed a tight, parameter-free fit
-to listeners' aggregate judgements when combined
-with empirical measurements of the prior distribution: 
-$P_S$ and $P_L$ models correlated very strongly with participants' average bets on what to say and how to interpret, respectively. 
+to the prior $P(w)$). The RSA model showed a tight fit
+to listeners' aggregate judgments when combined
+with empirical measurements of the prior distribution:
+$P_S$ and $P_L$ models correlated very strongly with participants' average bets on what to say and how to interpret, respectively.
 
 Although in this initial work RSA was used to simulate the behavior of
 both speakers and listeners, most subsequent work has focused on the
@@ -241,13 +239,13 @@ Other studies \citep{carstensen2014} found that RSA
 predicted judgments in a communication game using much more complex
 spatial language stimuli, albeit with somewhat noisier fits. Thus, RSA
 with an epistemic utility can predict judgments in simple signaling
-games across variations in both sample and stimulus.
+games across variations in both participant sample and stimulus.
 
-One question raised by this initial work was the level of social recursion (see Glossary) that
+One question raised by this initial work was the level of {\bf social recursion} (see Glossary) that
 best fit human performance. The presentation of RSA given above is
 stated in terms of a minimal recursion (a listener reasons about
 speaker, who in turn reasons about a literal listener) but much greater
-depths of reasoning are in principle possible. The evidence is mixed on whether deeper levels of recursion are commonly seen in language comprehension, however. In a variety of experiments exploring this issue, participants tended to show chance-level performance for signaling systems that required deeper levels of
+depths of reasoning are in principle possible. The evidence is mixed on whether deeper levels of recursion are commonly seen in language comprehension. In a variety of experiments exploring this issue, participants tended to show chance-level performance for signaling systems that required deeper levels of
 recursion to find unique interpretations \citep{stiller2011,degen2012,vogel2013}. More recent studies \citep{franke2016},
 however, showed some evidence of deeper recursion
 for a subpopulation of participants (approx.~15\%) in a more
@@ -272,18 +270,17 @@ such as number of words and their frequencies in explorations of phenomena such 
 Finally, in addition to ad-hoc signaling systems, RSA provides a way to describe reasoning about classic linguistic
 implicatures. Perhaps the
 best-studied of these is the scalar implicature that ``some of the
-letters had checks inside'' implicates that not all did. 
+letters had checks inside'' implicates that not all did.
 One study \citep{goodman2013} measured participants' judgments about the
 interpretations of quantifiers and number words in exactly this
 situation and found that these judgments were well-predicted by RSA. In
 addition, a critical feature of this study was the inclusion of an
-epistemic manipulation (e.g., that some of the letters had not been opened
-yet). By using expected informativity (\textbf{see Box}) to account for the speaker's
+epistemic manipulation (e.g., whether all of the letters had already been opened). By using expected informativity (\textbf{see Box}) to account for the speaker's
 limited perceptual access, the model was able to predict
 differing patterns of listener judgments based on different levels of
 speaker uncertainty. These empirical findings are congruent with other recent
 demonstrations of the importance of epistemic reasoning in pragmatic
-implicature \citep[e.g.,]{bergen2012,breheny2013}. They
+implicature \citep{bergen2012,breheny2013}, and the theoretical account accords with other probabilistic treatments of scalar implicature \cite{russell2012}. They
 also highlight the way the RSA framework provides a (non-modular) theory
 for interactions between language and non-linguistic cognition.
 We next turn to a variety of other extensions to the basic RSA model that explore additional interactions.
@@ -292,7 +289,7 @@ We next turn to a variety of other extensions to the basic RSA model that explor
 
 In the basic RSA model, the listener has a specific model in mind of how
 a speaker will behave. But what should a listener do if he is not sure
-what speaker model is appropriate? Speakers can differ in knowledge, communicative goals, and many other aspects; 
+what speaker model is appropriate? Speakers can differ in knowledge, communicative goals, and many other aspects;
 these differences can lead a listener to arrive at different interpretations of the same utterance.
 Recent work has addressed this issue by positing a joint inference: What type of speaker am I
 interacting with and what is the world like, given the utterance I
@@ -333,7 +330,7 @@ complex interpretations.
 
 Hyperbolic utterances such as ``the
 electric kettle cost \$1,000'' are a key case study \citep{kao2014}.
-In this example, the number \$1,000 can
+In this example, the number \$1,000 can be
 interpreted as conveying information about the speaker's affect, not the
 actual price, in part because one thousand dollars is an implausibly
 high price for a kettle. As shown in Figure \ref{fig:ursa}, the uRSA model  captures this intuition by positing that the topic of the speaker's
@@ -341,13 +338,13 @@ utterance may be the actual price of the kettle, the speaker's
 opinion about the price, or some combination of the two. Since the listener
 does not know the topic, he jointly infers it together with the
 likely true price of the kettle and the speaker's affect. When the
-uttered price is implausible it becomes more likely that the speaker is aiming to convey her opinion, 
+uttered price is implausible it becomes more likely that the speaker is aiming to convey her opinion,
 and using \$1,000 (a price which most people would find too high) to do so.
 In this way, the listener's joint inference can yield a
 non-standard topic and hence a non-literal interpretation.
 
 By extending
-the space of affect to include both valence and arousal, the same model predicts verbal irony \citep{kao2015}. 
+the space of affect to include both valence and arousal, the same model predicts verbal irony \citep{kao2015}.
 And a similar approach has been suggested for simple
 metaphors \citep{kao2014b}, such as ``John is a shark.''
 Here the potential topics include not affect, but features of the
@@ -357,7 +354,7 @@ human interpretations, a striking result considering the complexity and subtlety
 
 Many linguistic descriptions, especially adjectives, are both context-sensitive and vague. Providing precise definitions for words like \emph{expensive} or \emph{tall} has been a persistent challenge for philosophers and semanticists \citep{williamson2002}. uRSA models address this challenge by assuming that word meanings can differ between speakers and contexts, and and that these meanings themselves can be a subject for inference. In the case of scalar adjectives like \emph{tall}, the uncertainty is over the threshold required: what height is required before an object counts as tall?
 Under the uRSA model, judgments about meaning take into account two conflicting pressures: On one hand, a stricter threshold for tallness makes the term \emph{tall} more informative. For instance ``Bob is tall'' tells us a great deal if \emph{tall} requires a height greater than eight feet. But, on the other hand, a stricter threshold makes such a sentence quite unlikely to be true \emph{a priori}.
-By negotiating this balance between informativity and plausibility, uRSA accounts for three key phenomena of vague adjectives \citep{lassiter2015}: the inferred meaning depends on the class (tall for a tree vs. tall for a person), there are borderline cases, and the interpretations are subject to a \emph{sorites} paradox (no single minimal increment in height will make you tall, but enough increments will). The process of reasoning about meaning modeled by uRSA might even interact with learning processes to produce more long-lasting inferences about word meaning, leading to language change (\textbf{see Box on Language use and language change}).
+By negotiating this balance between informativity and plausibility, uRSA accounts for three key phenomena of vague adjectives \citep{lassiter2015}: the inferred meaning depends on the class (tall for a tree vs. tall for a person), there are borderline cases, and the interpretations are subject to a \emph{sorites} paradox (no single minimal increment in height will make you tall, but enough increments will). The process of reasoning about meaning that are modeled by uRSA might even interact with learning processes to produce more long-lasting inferences about word meaning, leading to language change (\textbf{see Box on Language use and language change}).
 
 % This approach to uncertainty about word meanings has been extended to account for effects generic and habitual
 % statements \citep{tessler2016} and manner implicatures \citep{bergen2016}.
@@ -375,7 +372,7 @@ sentences like ``Exactly one letter is connected with some of its
 circles.'' In these cases, some experimental evidence suggests that
 participants access the interpretation that one letter is connected with
 some \emph{but not all} of its circles, an interpretation that standard
-Gricean theories cannot generate \citep{chemla2011}. 
+Gricean theories cannot generate \citep{chemla2011}.
 Recent work \citep{potts2015} has replicated these interpretations in a series of large-scale
 experiments and confirmed that basic RSA models could not capture them.
 An implementation of uRSA that jointly infers word meanings and world state \citep{bergen2016,potts2015} showed a good fit to the overall pattern of data. Sentence meanings in this model are built by composing uncertain word meanings, showing how uRSA is a fruitful way to incorporate pragmatic reasoning into compositional semantic systems.
@@ -393,22 +390,23 @@ linguistic meaning is changed by context.
 
 The key tool in this work is the Rational Speech Act framework, which builds upon and synthesizes a
 number of formal traditions in the study of human inference, from game
-theory to models of human reasoning. 
+theory to models of human reasoning.
 The RSA approach also builds on existing
 work on semantic representation -- using a compositional semantics
 \emph{a la} Montague \citep{dowty2012} -- and contributes back to semantics, providing a
 specific mechanism by which underspecified meanings become precise, in
 context.
-Rather than formalizing only a single hypothesis about pragmatic language understanding, 
-RSA provides a framework in which many variations can be explored. 
-Varying assumptions about the speaker's utility (\textbf{see Box: Refinements to the speaker's utility}) 
-and listener's uncertainty (see Section \ref{uncertainty-about-the-speaker-joint-reasoning}), for instance, 
+Rather than formalizing only a single hypothesis about pragmatic language understanding,
+RSA provides a framework in which many variations can be explored.
+Varying assumptions about the speaker's utility (\textbf{see Box: Refinements to the speaker's utility})
+and listener's uncertainty (see Section \ref{uncertainty-about-the-speaker-joint-reasoning}), for instance,
 yields a spectrum of hypotheses that can be evaluated against quantitative experimental data.
-While it has been successful in many recent cases, it may emerge that the RSA approach is not able to capture 
-some aspects of language understanding, either because the foundational, Bayesian, tools it relies on are inadequate \citep{jones2011}, or because pragmatic effects arise from sources not easily incorporated into RSA. 
-Optimistically, RSA can be combined with other approaches when needed. 
-For instance, the alternative utterances in RSA can be restricted  \citep{potts2015} using previously-proposed grammatical mechanisms \citep{Fox2011}.
-Indeed, this cross-fertilization is among the most encouraging outcomes.
+
+While it has been successful in many recent cases, it may emerge that the RSA approach is not able to capture
+some aspects of language understanding, either because the foundational, Bayesian, tools it relies on are inadequate \citep{jones2011}, or because pragmatic effects arise from sources not easily incorporated into RSA.
+Optimistically, however, RSA can be combined with other approaches when needed.
+For instance, the alternative utterances in RSA can be restricted  \citep{potts2015} using previously-proposed grammatical mechanisms \citep{Fox2011}. And increasingly, methods in machine learning have been used to supplement RSA with powerful learning mechanisms \cite{monroe2015}.
+Indeed, this cross-fertilization is among the most encouraging outcomes of work on RSA.
 
 
 
@@ -416,19 +414,18 @@ Indeed, this cross-fertilization is among the most encouraging outcomes.
 % Future work will need to engage with additional levels of linguistic structure, such as discourse (Ascher, etc).
 
 The RSA framework is a \emph{computational} level description of the
-language user's competence, in Marr's sense \citep{marr1982}. 
+language user's competence, in Marr's sense \citep{marr1982}.
 There are many
 possible ways a cognitive agent could implement RSA at the algorithmic
-level, and it is unclear which might match the speed and competence of human language understanding and production. 
-These alternatives must further be evaluated for their ability to capture
-quantitative processing details, such as reaction times and eye gaze \citep{degen2015,nordmeyer2014}. 
-Yet even the computational-level framework inspires different intuitions about processing than previous theories.
-RSA-style reasoning makes pragmatic inferences a fundamental part of language comprehension, 
+level, and it is unclear which might match the speed and competence of human language understanding and production.
+These alternatives must further be evaluated for their ability to explain the processing signatures of language comprehension such as reaction times and eye gaze \citep{degen2015,nordmeyer2014}.
+Yet even as a computational-level framework, RSA inspires different intuitions about processing than previous theories.
+For example, RSA-style reasoning makes pragmatic inferences a fundamental part of language comprehension,
 in which the ultimate goal of all interpretation is to settle on the intended
 meaning, given both the literal semantics of the utterance and the
-broader pragmatic context. 
-This contrasts with Gricean analyses, in which pragmatics enters when the violation of a maxim leads to reasoning
-to ``repair'' the interpretation, and correspondingly slower processing; a view that has been
+broader pragmatic context.
+This framing contrasts with Gricean analyses, in which pragmatics enters when the violation of a maxim leads to reasoning
+to ``repair'' the interpretation, and correspondingly slower processing, a view that has been
 challenged both theoretically and empirically \citep[e.g.,][]{levinson2000,grodner2010}.
 
 %Yet even in its
@@ -440,24 +437,24 @@ challenged both theoretically and empirically \citep[e.g.,][]{levinson2000,grodn
 %idea of repair that pragmatic inferences should be slow (because they
 %depend on full semantic interpretation) and optional (because they only
 %happen after a violation). These assumptions have been
-%challenged both theoretically and empirically \citep[e.g.,][]{levinson2000,grodner2010}. 
+%challenged both theoretically and empirically \citep[e.g.,][]{levinson2000,grodner2010}.
 %In this way, RSA is consistent with modern
 %psycholinguistic theories that emphasize interactive, incremental
 %processing \citep{degen2015}.
 
 
 
-Future extensions of RSA will likely include worlds with more and richer structure; 
-a thorough and practical theory of pragmatic alternatives; 
-more sophisticated discourses that unfold over many utterances; 
+Future extensions of RSA will likely include worlds with more and richer structure;
+a thorough and practical theory of pragmatic alternatives;
+more sophisticated discourses that unfold over many utterances;
 and utility structures that better take into account the complexities of social interaction.
 On the practical side, computing the predictions of RSA models can
 become prohibitive when the number of world states or utterances grows
-large. Further development of algorithms to implement RSA are needed.
+large. Further development of algorithms to implement RSA is needed.
 These
 developments may go together with new algorithms for learning aspects of
 the underlying semantics, which will open up new applications for the
-RSA approach in computational linguistics and artificial intelligence \citep{golland2010,vogel2013b,monroe2015,andreas2016}.
+RSA approach in computational linguistics and artificial intelligence \citep{golland2010,vogel2013b,monroe2015,andreas2016, orita2014}.
 % (e.g., Goland, Liang, \& Klein, 2010; Vogel \& Potts, 2013; Munroe \&
 % Potts, 2015; Andreas \& Klein ??).
 
@@ -473,7 +470,7 @@ an astonishingly flexible communication system.
 \section{Acknowledgements}
 
 We gratefully acknowledge funding from a James S. McDonnell Foundation Scholar Award to Goodman,
- ONR Grants N00014-13-1-0788 and \#N00014-13-1-0287 to Goodman and Frank, and NSF BCS Grant \#1456077 to Frank.
+ ONR Grants N00014-13-1-0788 and N00014-13-1-0287 to Goodman and Frank, and NSF BCS Grant 1456077 to Frank.
 
 %\appendix
 
@@ -497,8 +494,8 @@ We gratefully acknowledge funding from a James S. McDonnell Foundation Scholar A
 \section{Box: Outstanding questions}\label{box-outstanding-questions}
 
 \begin{itemize}
-\item \emph{Social recursion.} How deeply do human comprehenders reason about others' intentions? Is depth of recursion -- ``I think that you think that...'' -- constant, or does it vary across situations? 
-  
+\item \emph{Social recursion.} How deeply do human comprehenders reason about others' intentions? Is depth of recursion -- ``I think that you think that...'' -- constant, or does it vary across situations?
+
 \item \emph{Alternatives.} How are alternative utterances computed? Do they depend on the language grammar? On situational factors?
   %  Do they depend \emph{a priori} on the heard utterance ofcontext?
 
@@ -553,35 +550,25 @@ considered in recent work:
 
 \end{itemize}
 
-\section{Box: Children's developing pragmatic competence}\label{box-childrens-developing-pragmatic-competence}
+\section{Box: RSA and children's developing pragmatic competence}\label{box-childrens-developing-pragmatic-competence}
 
 From a very early age, children are oriented towards communication, understanding the function of language for information
 transfer and repurposing their limited linguistic means to achieve a
 wide variety of ends \citep{vouloumanos2012,clark2010}. In light
 of this general early orientation, the literature on pragmatic
 development specifically has been puzzling: older children very reliably
-fail to make scalar implicatures under a range of circumstances \citep{noveck2001}. In one striking example, five-year-olds endorsed the statement that ``some of the horses jumped over the fence'' even when three out of three of a set of horses had made the jump \citep{papafragou2003}.
+fail to make scalar implicatures under a range of circumstances \citep{noveck2001}. In one striking example, five-year-olds endorsed the statement that ``some of the horses jumped over the fence'' even when three out of three of a set of horses had made the jump \citep{papafragou2003}. RSA-style models can provide a framework for thinking about this disconnect between early communicative successes and
+later pragmatic failures.
 
-What explains this disconnect between early communicative successes and
-later pragmatic failures? Early theorizing suggested that younger
-children might not be able to make pragmatic computations, but this hypothesis appears unlikely given evidence that
-younger children are sensitive to the pragmatic informativeness of
-messages \citep{katsos2011,oneill2001}. More
-recently, theorists have proposed that apparent difficulties with
-pragmatic implicatures may have resulted from children's inadequate
-knowledge of the specific lexical alternatives that compete in pragmatic
-inferences (e.g., not understanding that ``some'' contrasts with
-``all,'' leading to the implicature ``some but not all'') rather than
-difficulty with pragmatic computations more generally \citep{barner2011}.
+Recently, theorists have proposed that children's apparent difficulties with
+pragmatic implicatures may have resulted from their inadequate
+knowledge of relationships between lexical alternatives rather than
+difficulty with pragmatic computations more generally \citep{barner2011}. Congruent with this idea, three-year-old children show
+signs of successful implicature computations in the kinds of signaling games shown in Figure \ref{fig:hg}, where the referential alternatives are all simple objects that are visible in the scene \citep{stiller2015}. And children in the same age range were able to use an
+implicature to guess the meaning of a novel word \citep{frank2014} or a novel context \citep{horowitz2016}, showing the kind of inferential flexibility posited in RSA accounts.
 
-Our work supports this ``alternatives hypothesis'' by providing evidence
-for a range of implicature computations in young children. For example,
-in a purely referential (or ``ad hoc'') task that did not use
-quantifiers or other complex language, three-year-old children showed
-signs of successful implicature computations \citep{stiller2015}. And children in the same age range were able to use an
-implicature to guess the meaning of a novel word \citep{frank2014} or a novel context \citep{horowitz2016}. These findings support the idea that even young children are able
-to make flexible pragmatic inferences in simple referential scenarios,
-and are consistent with the application of RSA-style reasoning. Future
+These findings support the idea that even young children are able
+to make flexible pragmatic inferences, and are consistent with the application of RSA-style reasoning, albeit with limits on the available semantic alternatives. Future
 research will be required, however, to test whether RSA (or some
 capacity-limited modification) could make quantitative predictions about
 pragmatic development.
@@ -596,14 +583,14 @@ egocentric, error prone, and subject to idiosyncratic production
 preferences \citep{keysar2003,lane2006,gatt2013}?
 % (Keysar et al., 2003; Lane, Groisman, \& Ferreira, 2008; Gatt et al., 2013)?
 
-Although our initial studies collected judgements about language
+Although our initial studies collected judgments about language
 production in extremely restricted tasks \citep{frank2012}, most
 recent work using the RSA model has focused on modeling listeners'
-judgements, rather than speakers' productions. One reason for this
+judgments, rather than speakers' productions. One reason for this
 choice is that often the most interesting pragmatic inferences come
 about when speakers are not maximally informative. For example, in the
 signaling game shown in Figure \ref{fig:hg}, helpful speakers will often
-overspecify and say ``glasses and no hat'' \citep{baumann2014}. 
+overspecify and say ``glasses and no hat'' \citep{baumann2014}.
 But this unnecessarily redundant utterance may in fact be a
 reasonable response to uncertainty about whether a conversational
 partner will in fact draw the desired implicature.
@@ -644,7 +631,7 @@ communication \citep{piantadosi2012}.
 In this sense, in-the-moment pragmatic interpretation may bootstrap long term language change.
 
 The processes of change that promote efficient communication have been
-explored extensively within the iterated learning paradigm \citep{kirby2008}. 
+explored extensively within the iterated learning paradigm \citep{kirby2008}.
 %For example, iterated transmission of an arbitrary communication system can lead to the emergence of semantic regularities \citep{kirby2008}.
 This framework can also be used to express the competing pressures of
 learnability and communication. When languages are selected only to be
@@ -683,7 +670,7 @@ An important future direction is to understand whether this typological distribu
 \item \textbf{Social recursion}. Reasoning that involves two people, such as listener and speaker, thinking about each other: ``I think that you think that I think that....'' This may proceed to a finite depth, or continue \emph{ad infinitum}.
 
 %Some more that Becca sugested:
-%literal listener 
+%literal listener
 %compositional semantic systems
 \end{itemize}
 
